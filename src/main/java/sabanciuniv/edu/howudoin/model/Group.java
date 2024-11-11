@@ -14,5 +14,6 @@ public class Group {
     String name;
     int adminId;
     List<User> members;
+    //List<Message> messages; -> Not sure about this one
 
 }

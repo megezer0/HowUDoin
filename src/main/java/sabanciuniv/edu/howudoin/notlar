@@ -1,0 +1,38 @@
+Project opening part is okay
+
+Spring Web
+Spring Mongo
+Lombok
+
+Model/Entity Classes -> for the objects that will be created
+
+Controller Classes -> Recieve rest requests
+
+Service Classes -> Get the data or put the data -> Uses repository and places the data in the mongo data base
+
+Repository ->
+
+
+Product has private id, name, price attributes
+Use lombok annotations for constructor, getter, setter
+
+To insert a product to mongodb
+    1. Rest controller kullanarak post/put method olan bi function yazıyoruz. Bu functionlar called api endpoints.
+       public boolean createProduct() -> @PutMapping("/product")
+       public boolean updateProduct -> PostMapping("/product/{id}")
+       ...
+    2. Product Repository açıyoruz, interface extending MongoRepository<Product,String> --> Dont have to write anything in this class
+    3. Product Service logical işleri yapıyor.  We use @Servive annotation first. then have private ProductRepository ProductRepository as an attribute in service and IN THE CONTROLLER and write @Autowired before that
+    4. Then write public void addProduct(Product p) -> productRepository.save(p)
+    5. In controller we dont have to first create an object just call addProduct method
+    6. Add product object in controller in addProduct method and use service classes method
+    7. Start mongo from docker and add the gerekli şeyler to the application.properties -> spring mongo host= localhost and the port=27027 thing and database name = 310 or smth(yml file can be used -> in the class video)
+    8. Create database in the mongo compass, try adding manually to check if it works
+    9. You will have different URL identifier with name id e mail etc. in the controller mappings. Look from the video for the syntax -> @RequestBody
+    10. Google only show get requests but you can use testfully to test others
+
+    Get lists of products
+    1. use productRepository.findAll() in the service and getAllPrduct in controller
+
+    Security
+    - There is a link in the Sucourse

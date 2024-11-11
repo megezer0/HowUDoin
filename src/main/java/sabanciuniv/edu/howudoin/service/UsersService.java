@@ -1,10 +1,15 @@
 package sabanciuniv.edu.howudoin.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import sabanciuniv.edu.howudoin.model.User;
 import sabanciuniv.edu.howudoin.repository.UsersRepository;
 //Also import PasswordEncoder and JwtTokenProvider
 
+@Service
 public class UsersService {
+
+    private  UsersRepository usersRepository;
 
     //Registers a new user.
     void registerUser(User user) {
