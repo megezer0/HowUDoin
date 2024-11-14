@@ -10,10 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Group {
-    String id;
-    String name;
-    int adminId;
-    List<Object> members;
-    //List<Message> messages; -> Not sure about this one
-
+    private String groupId;
+    private String name;
+    private User admin;
+    private List<User> members;
 }

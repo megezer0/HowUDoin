@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Message {
-    String id;
-    int senderId;
-    int receiverId;
-    int groupId;
-    String content;
-    String timestamp;
+    private String id;
+    private User senderUser;
+    private User receiverUser;
+    private Group recieverGroup;
+    private String messageContent;
+    private String timestamp;
 }
