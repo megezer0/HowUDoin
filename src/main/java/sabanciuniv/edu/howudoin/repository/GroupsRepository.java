@@ -5,5 +5,4 @@ import sabanciuniv.edu.howudoin.model.Group;
 
 public interface GroupsRepository extends MongoRepository<Group, String> {
 
-
 }

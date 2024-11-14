@@ -4,14 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sabanciuniv.edu.howudoin.model.Group;
 import sabanciuniv.edu.howudoin.repository.GroupsRepository;
+import sabanciuniv.edu.howudoin.service.GroupsService;
 
 @RestController
 public class GroupsController {
 
+    private GroupsService groupsService;
+
     @PostMapping("/groups/create")
     public void createGroup(){
-
+        Group newGroup = new Group();
+        groupsService.createGroup(newGroup);
     }
 
     @PostMapping("")

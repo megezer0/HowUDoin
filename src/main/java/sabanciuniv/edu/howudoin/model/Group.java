@@ -13,7 +13,7 @@ public class Group {
     String id;
     String name;
     int adminId;
-    List<User> members;
+    List<Object> members;
     //List<Message> messages; -> Not sure about this one
 
 }
